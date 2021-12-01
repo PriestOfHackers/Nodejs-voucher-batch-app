@@ -9,3 +9,14 @@ Voucher batch
 // If time permits try the following
 // Expose your API via a nodeja API. Bonus if you can use NestJS and use some of it’s features
 // The API should be able to produce 1 to 10 million voucher codes in a reasonable amount of time.
+
+
+
+************************How to setup**************************************************************
+
+1) download codebase
+2) open command line
+3) run "node serve.js"
+
+
+********************
