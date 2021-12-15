@@ -11,6 +11,12 @@ Voucher batch
 // The API should be able to produce 1 to 10 million voucher codes in a reasonable amount of time.
 
 
+/////Stage 2 Challange///////////////
+//Connect the app to a database 
+//Store the alphanumeric in the database accordingly
+//Retrieve the data from last 50 runs
+
+
 
 ************************How to setup**************************************************************
 
