@@ -4,5 +4,17 @@
       "password" : "priesthacks",
       "profession" : "geek",
       "id": 1
+   },
+   "user2" : {
+      "name" : "User2",
+      "password" : "passwxrd",
+      "profession" : "Dev",
+      "id": 2
+   }, 
+   "user3" : {
+      "name" : "User2",
+      "password" : "pasxwxrd",
+      "profession" : "Design",
+      "id": 3
    }
 }
