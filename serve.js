@@ -31,15 +31,40 @@ app.get('/voucher', function(req, res){
   res.send(output);
 });
 
+//This is a fully funtion web api to write to a .txt 
+app.get('/writetofile', function(req, res){
+   var fs = require("fs");
+   
+   console.log("Going to write into existing file");
+   fs.writeFile('input.txt', 'Simply Easy Learning!', function(err) {
+      if (err) {
+         return console.error(err);
+      }
+      
+      console.log("Data written successfully!");
+      console.log("Let's read newly written data");
+      
+      fs.readFile('input.txt', function (err, data) {
+         if (err) {
+            return console.error(err);
+         }
+         console.log("Asynchronous read: " + data.toString());
+      });
+   });
+   });
 
-//How can I improve this method?
+
+//Main menu to the app gives users, available features w respective url
 var server = app.listen(8081, function () {
-
 
    var host = server.address().address
    var port = server.address().port
    console.log("Node.js Alpha-numeric app is listening on http://%s:%s", host, port)
    console.log("1. Users - http://localhost:8081/users")
    console.log("2. Create voucher - http://localhost:8081/voucher")
+   console.log("3. Write to file - http://localhost:8081/writetofile")
 
 })
+
+
+
