@@ -33,28 +33,29 @@ app.get('/voucher', function(req, res){
 
 //This is a fully funtion web api to write to a .txt 
 app.get('/writetofile', function(req, res){
+
+
    var fs = require("fs");
-   
-   console.log("Going to write into existing file");
-   fs.writeFile('input.txt', 'Simply Easy Learning!', function(err) {
+
+   fs.writeFile('input.txt', 'Yeah! we deving in Node.js', function(err) {
       if (err) {
          return console.error(err);
       }
       
       console.log("Data written successfully!");
-      console.log("Let's read newly written data");
-      
+
       fs.readFile('input.txt', function (err, data) {
          if (err) {
             return console.error(err);
          }
-         console.log("Asynchronous read: " + data.toString());
+         console.log("input.txt reads: " + data.toString());
       });
+
    });
    });
 
 
-//Main menu to the app gives users, available features w respective url
+//Main menu to the app gives users, available features w respective urls
 var server = app.listen(8081, function () {
 
    var host = server.address().address
@@ -65,6 +66,3 @@ var server = app.listen(8081, function () {
    console.log("3. Write to file - http://localhost:8081/writetofile")
 
 })
-
-
-
