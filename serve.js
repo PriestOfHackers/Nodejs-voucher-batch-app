@@ -35,9 +35,10 @@ app.get('/voucher', function(req, res){
 app.get('/writetofile', function(req, res){
 
 
+   var output = voucherGenerate();
    var fs = require("fs");
 
-   fs.writeFile('input.txt', 'Yeah! we deving in Node.js', function(err) {
+   fs.writeFile('input.txt', output , function(err) {
       if (err) {
          return console.error(err);
       }
@@ -54,7 +55,6 @@ app.get('/writetofile', function(req, res){
    });
    });
 
-
 //Main menu to the app gives users, available features w respective urls
 var server = app.listen(8081, function () {
 
@@ -64,5 +64,22 @@ var server = app.listen(8081, function () {
    console.log("1. Users - http://localhost:8081/users")
    console.log("2. Create voucher - http://localhost:8081/voucher")
    console.log("3. Write to file - http://localhost:8081/writetofile")
-
 })
+
+//method decouples voucher generation from the express method
+function voucherGenerate(){
+
+  var text = "";
+  var output = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+  for (var j = 0; j < 100; j++){
+   for (var i = 0; i < 10; i++){
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+   }
+      output += text+"\n";
+      text= "";
+  }
+
+   return output;
+}
